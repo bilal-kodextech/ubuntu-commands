@@ -1,0 +1,271 @@
+folder contain file name 
+ls
+
+folder contain file name with details
+ll
+
+Change directory command 
+cd
+
+Go to the home screen 
+cd
+
+One folder back
+cd ..
+
+create new folder/directory
+mkdir foldername
+mkdir project
+
+Move file into folder 
+mv filename Folder/
+mv info.txt config/
+
+Move folder into folder 
+mv folder/ Folder/
+mv data/ config/
+
+Delete File 
+rm -f filename
+rm -f info.txt
+
+Rename file name
+mv filename filename 
+mv info.txt information.txt
+
+Move all files and folder to another remain main directory
+mv folder/folder/folder/* ../../home/user/folder/folder/
+mv Laravel/project/zip/* ../../home/user/Laravel/project/
+
+Move one specfic files and folder to another remain main directory
+mv folder/folder/folder/foldername ../../home/user/folder/folder/
+mv Laravel/project/zip/crud1 ../../home/user/Laravel/project/
+
+Create new folder remain on main directory
+mkdir foldername/newfoldername
+mkdir Laravel/newali
+
+Delete Entire Folder
+rm -rf foldername
+rm -rf info
+
+give sudo all permission to folder
+sudo chmod -R 777 /var/DirectoryName
+sudo chmod -R 777 /var/www/html/crud
+
+sudo chmod a+rwx /var/szDirectoryName
+sudo chmod a+rwx /var/user
+a mean all, r mean read,w mean write, x mean execute
+
+See hidden file:
+ls -ld .?*
+
+ubunut opent terminal:
+alt+ctrl+t
+
+ubuntu full and minimize screen:
+alt+f10
+
+delete/remove file:
+rm fileName
+rm info.txt
+
+Delete/remove folder:
+rm -d foldername
+rm -d crud
+
+Delete/remove folder forcefully:
+rm -rf foldername
+rm -rf crud
+
+Delete/remove folder contain file:
+rm -R foldername
+rm -R crud
+
+======================Databse==============================
+My sql open 
+mysql -u root -p
+and then enter password of adminer
+53cr3t
+
+Create a new database:
+CREATE DATABASE db_name;
+CREATE DATABASE test;
+
+show database
+SHOW DATABASES;
+
+chose/pick database:
+USE database
+use test
+
+tables show
+SHOW TABLES;
+show user;
+
+shows information on all columns of a table:
+DESCRIBE tableName;
+DESCRIBE user;
+
+Then use raw query to to manipulate data; 
+
+
+
+close database;
+exit;
+
+======================Laravel===========================
+Install laravel:
+composer create-project laravel/laravel Projectname
+composer create-project laravel/laravel example-app
+
+
+Make new model:
+php artisan make:model Modelname
+php artisan make:model Flight
+
+Make new migeration table:
+php artisan make:migration create_tablename_table
+php artisan make:migration create_order_table
+
+Make single specific migeration:
+php artisan migrate --path=/database/migrations/test/
+
+Make model and controller:
+php artisan make:model modelname -mcr
+php artisan make:model Todo mcr
+
+Make controller
+php artisan make:controller name
+php artisan make:controller userController
+
+Roll back migration:
+php artisan migrate:rollback
+
+Roll back migrate one step:
+php artisan migrate:rollback --step=1
+
+Make new column in database
+php artisan make:migration add_columnName_to_tableName_table --table=tableName
+php artisan make:migration add_paid_to_users_table --table=users
+
+Migrate specific migration/column to database:
+php artisan migrate --path=/database/migrations/my_migration.php
+php artisan migrate --path=/database/migrations/my_migration_name.php
+
+Laravel create new project:
+composer create-project laravel/laravel example-app
+composer create-project laravel/laravel crud
+
+
+
+================Git Command========================
+
+Git tracker command
+git status\
+git status
+git add .
+git commit -m "w"
+git checkout main 
+git checkout duplicate 
+
+=================git lab command===========================
+
+New project setup
+
+make clone:
+git clone https://gitlab.com/Aleem71/clockit.git
+cd clockit/
+
+git make branch:
+git checkout -b bilal
+
+git pull:
+git pull origin master
+
+cp .env.example .env
+nano .env(change in fill daatabase)
+(
+APP_URL=http://localhost/clockit
+ASSET_URL=http://localhost/clockit/public
+DB_DATABASE=clockit
+DB_USERNAME=root
+DB_PASSWORD=
+)
+
+composer update
+key:generate
+
+After project setup run these command:
+
+to limit storage folder access on linux server
+
+sudo chown -R root:www-data storage
+sudo chmod -R ug+w storage
+
+sudo chown -R root:www-data bootstrap
+sudo chmod -R ug+w bootstrap
+
+root =username at your server
+
+
+Git Global configuration:
+git config --global user.name "your_username"
+git config --global user.email "your_email_address@example.com"
+git config --global --list
+
+git push:
+git add.
+git status
+git commit -m "comment add"
+git status
+git push --set-upstream origin bilal
+git push
+git status
+
+===============Node Command =================
+ubuntu node command
+npm rebuild node-scss
+
+npm run serve
+
+
+
+==================New ubunutu software downloads=====================
+
+sudo apt-get install preload
+
+
+sudo apt-get update
+sudo apt-get install apache2
+
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+
+sudo apt-get install mysql-server
+
+sudo apt-get install php libapache2-mod-php
+
+sudo nano /var/www/html/info.php
+
+<?php
+ 
+phpinfo();
+ 
+?
+
+sudo systemctl restart apache2
+
+sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y 
+
+sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
+
+
+
+
+
+
+
+
+
+
