@@ -17,6 +17,10 @@ create new folder/directory
 mkdir foldername
 mkdir project
 
+create new file
+touch filename
+touch info.txt
+
 Move file into folder 
 mv filename Folder/
 mv info.txt config/
@@ -52,6 +56,9 @@ rm -rf info
 give sudo all permission to folder
 sudo chmod -R 777 /var/DirectoryName
 sudo chmod -R 777 /var/www/html/crud
+
+https://chmodcommand.com/chmod-766/
+https://help.ubuntu.com/community/FilePermissions
 
 sudo chmod a+rwx /var/szDirectoryName
 sudo chmod a+rwx /var/user
