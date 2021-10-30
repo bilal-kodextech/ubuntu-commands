@@ -89,6 +89,13 @@ Delete/remove folder contain file:
 rm -R foldername
 rm -R crud
 
+Create Soft link/ shortcut:
+ln -s 'complete path of folder or drag that folder or filer in terminal' 'Path /Position where place that folder'
+ln -s '/media/bilal/Local Disk/ubuntu-command/file/folder name' Desktop/
+
+ln -s '/media/bilal/Local Disk/ubuntu-command/Ubuntu Command' Desktop/
+
+
 ======================Databse==============================
 My sql open 
 mysql -u root -p
