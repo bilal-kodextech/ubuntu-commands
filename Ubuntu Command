@@ -95,6 +95,13 @@ ln -s '/media/bilal/Local Disk/ubuntu-command/file/folder name' Desktop/
 
 ln -s '/media/bilal/Local Disk/ubuntu-command/Ubuntu Command' Desktop/
 
+Remove/Delete all files from folder:
+rm path/to/dir/*
+rm app/public/uploads/*
+
+Remove/Delete all files and sub folder from folder:
+rm -r path/to/dir/*
+rm -r app/public/uploads/*
 
 ======================Databse==============================
 My sql open 
