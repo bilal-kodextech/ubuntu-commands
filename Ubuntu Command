@@ -184,6 +184,10 @@ php artisan db:seed
 Laravel Specific DB Seed:
 php artisan db:seed --class=UserSeeder
 
+Laravel create seeder:
+php artisan make:seeder UserSeeder
+
+
 ================Git Command========================
 
 Git tracker command
@@ -292,7 +296,17 @@ https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-l
 
 
 
-
+=================Latitude and Longitude ==========================
+31.547516034217118
+74.31668739001272
+31.550286377982115
+74.31712190787313
+31.550021233127996
+74.31614021937368
+31.554281745430572
+74.3217460362148
+31.484516537835773
+74.39748088995931
 
 
 
