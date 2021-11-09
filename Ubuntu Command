@@ -198,6 +198,9 @@ git commit -m "w"
 git checkout main 
 git checkout duplicate 
 
+check current branch:
+git branch --show-current
+
 =================git lab command===========================
 
 New project setup
