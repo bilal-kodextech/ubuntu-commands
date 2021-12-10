@@ -226,7 +226,7 @@ DB_PASSWORD=
 )
 
 composer update
-key:generate
+php artisan key:generate
 
 After project setup run these command:
 
@@ -297,7 +297,20 @@ sudo snap connect mysql-workbench-community:password-manager-service :password-m
 sudo lshw:
 https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/
 
+======================Ubuntu Scree Rotation============================== randr -o normal
+Screen rotation lock:
+window + o 
 
+Screnn rotaion normal/straight:
+xrandr -o normal
+
+Screnn rotaion left:
+xrandr -0 left
+
+Screnn rotaion right:
+xrandr - right
+
+=====================Ubuntu Screen Rotation==============================
 
 =================Latitude and Longitude ==========================
 31.547516034217118
