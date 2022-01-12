@@ -187,6 +187,47 @@ php artisan db:seed --class=UserSeeder
 Laravel create seeder:
 php artisan make:seeder UserSeeder
 
+=================Laravel New Project==============
+install project:
+composer create-project laravel/laravel example-app
+
+update env file:
+APP_URL=http://localhost/clockit
+ASSET_URL=http://localhost/clockit/public
+DB_DATABASE=clockit
+DB_USERNAME=root
+DB_PASSWORD=root
+
+Move File:
+move htaccess file from public folder to home directory
+move index.php file from public folder to home directory
+
+=================Laravel New Project==============
+
+================Laravel New project problem=================
+change in appache file: 
+cd /etc/apache2
+sudo nano apache2.conf
+
+Rplace Or comment the code:
+Orignal exist:
+<Directory /var/www/>
+       Options Indexes FollowSymLinks
+       AllowOverride None
+       Require all granted
+</Directory>
+
+Replace with following :
+<Directory /var/www/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
+
+
+================Laravel New project problem=================
+
 
 ================Git Command========================
 
