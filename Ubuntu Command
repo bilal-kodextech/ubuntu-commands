@@ -242,6 +242,7 @@ git checkout duplicate
 check current branch:
 git branch --show-current
 
+
 =================git lab command===========================
 
 New project setup
@@ -300,10 +301,59 @@ Git create new branch
 git branch BranchName
 git branch dev-bilal
 
+git error pathspec: 
+when create new project bydefault it was in master mode conver it to main by typing following command
+error: pathspec 'main' did not match any file(s) known to git
+
+
 Git show current branch Name:
 git branch --show-current
 
+git add remote url:
+git remote set-url origin https://github.com/Career-Karma-Tutorials/git-submodule
 
+git branch delete:
+git branch -d <branch name>
+git branch -d bilal-kodextech 
+
+git clone project empty:
+git clone --branch master url
+git clone --branch master https://gitlab.com/kodextech_1008/raad-dojo-backend.git
+
+
+git new project:
+type first command
+git remote add origin url 
+git remote add origin https://gitlab.com/bilal-kodextech/test.git
+
+git remote update
+git fetch 
+git checkout --track origin/<BRANCH-NAME>
+git checkout --track origin/main
+
+git error rebase:
+Error: fatal: Need to specify how to reconcile divergent branches
+git pull origin master --rebase
+
+git error rabase:
+git push -f origin master
+! [rejected]   mubeen-dev -> mubeen-dev (non-fast-forward)
+error: failed to push some refs to
+
+git add .
+git init
+git add .
+git commit -m 'change'
+git push
+git remote set-url origin https://gitlab.com/kodextech_1008/raad-dojo-backend.git
+git remote add bilal-kodextech https://gitlab.com/kodextech_1008/raad-dojo-backend.git
+git push bilal-kodextech
+git push --set-upstream bilal-kodextech master
+git status
+git add .
+git status
+git commit -m 'changes'
+git push
 
 
 ===============Node Command =================
@@ -343,6 +393,32 @@ sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql 
 
 sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
 
+Snapd Install and uninstall:
+The follwing process also resolve Postman issues.
+unistall snap:
+sudo apt autoremove --purge snapd
+Install snap:
+sudo apt install snapd
+
+phpmyadmin install:
+sudo apt update
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+Always use strong passwrod otherwise give error
+sudo mysql
+mysql -u root -p
+sudo apt install phpmyadmin
+
+
+phpmyadmin issues not accessable in browser:
+sudo su
+sudo  lm -s /usr/share/phpmyadmin/ /var/www/html
+sudo chmod 777 -R /var/www/html/phpmyadmin
+
+
+Github Desktop Download:
+sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb
+sudo apt-get install gdebi-core
+sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb
 
 ==============Check System Configuration =================
 sudo lshw:
