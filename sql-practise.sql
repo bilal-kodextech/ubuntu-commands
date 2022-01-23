@@ -5,3 +5,4 @@ from users
 where userType = 'owner'
 group by userType;
 
+

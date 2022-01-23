@@ -1,3 +1,4 @@
+
 folder contain file name 
 ls
 
@@ -201,6 +202,10 @@ DB_PASSWORD=root
 Move File:
 move htaccess file from public folder to home directory
 move index.php file from public folder to home directory
+
+Laravel Composer.json parse error Error:
+Add Following line:
+"lcobucci/jwt": "^3.3.3", 
 
 =================Laravel New Project==============
 
