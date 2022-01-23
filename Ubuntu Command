@@ -188,6 +188,9 @@ php artisan db:seed --class=UserSeeder
 Laravel create seeder:
 php artisan make:seeder UserSeeder
 
+Composer Install:
+https://linuxize.com/post/how-to-install-and-use-composer-on-ubuntu-18-04/
+
 =================Laravel New Project==============
 install project:
 composer create-project laravel/laravel example-app
@@ -211,6 +214,7 @@ Add Following line:
 
 ================Laravel New project problem=================
 change in appache file: 
+larvel project other route not open
 cd /etc/apache2
 sudo nano apache2.conf
 
@@ -230,6 +234,57 @@ Replace with following :
 </Directory>
 
 
+Appache conf file change second method:
+larvel project other route not open
+First of All you need to set AllowOverride All in /etc/apache2/apache2.conf. Find the following block:
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        DirectoryIndex index.php
+        Require all granted
+</Directory>
+
+then you need to modify /etc/apache2/mods-available/dir.conf and move index.php first 
+<IfModule mod_dir.c>
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+AND DO NOT FORGET: Run a2enmode
+sudo a2enmod rewrite
+sudo service apache2 restart
+https://stackoverflow.com/questions/21662378/routes-not-working-without-index-php
+
+
+appache old file:
+<Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Require all denied
+</Directory>
+
+<Directory /usr/share>
+        AllowOverride None
+        Require all granted
+</Directory>
+
+
+#<Directory /var/www/>
+#       Options Indexes FollowSymLinks
+#       AllowOverride None
+#       Require all granted
+#</Directory>
+
+<IfModule mod_dir.c>
+        DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+</IfModule>
+
+
+
+
+vs code not open from terminal:
+code . not open
+sudo chmod -R 0755 /var
+sudo chmod -R 0755 /var/www
+sudo chmod -R 0755 /var/www/html
 
 ================Laravel New project problem=================
 
@@ -405,6 +460,13 @@ sudo apt autoremove --purge snapd
 Install snap:
 sudo apt install snapd
 
+
+Github Desktop Download:
+sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb
+sudo apt-get install gdebi-core
+sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb
+
+
 phpmyadmin install:
 sudo apt update
 sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
@@ -419,11 +481,24 @@ sudo su
 sudo  lm -s /usr/share/phpmyadmin/ /var/www/html
 sudo chmod 777 -R /var/www/html/phpmyadmin
 
+phpmyadmin install from this link:
+https://stackoverflow.com/questions/34060036/have-trouble-installing-phpmyadmin-on-php7-apache-2-4-7-ubuntu
 
-Github Desktop Download:
-sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb
-sudo apt-get install gdebi-core
-sudo gdebi GitHubDesktop-linux-2.9.3-linux3.deb
+
+Root user check:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+
+Ubuntu software download links:
+https://linuxhint.com/installing_mysql_workbench_ubuntu/
+
+https://code.visualstudio.com/docs/setup/linux
+
+https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2
+
+https://askubuntu.com/questions/421233/enabling-htaccess-file-to-rewrite-path-not-working
+
+https://zoomadmin.com/HowToInstall/UbuntuPackage/libgconf-2-4
 
 ==============Check System Configuration =================
 sudo lshw:
