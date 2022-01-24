@@ -302,7 +302,33 @@ git checkout duplicate
 check current branch:
 git branch --show-current
 
+Git branch name show:
+first go into master branch
+git config --global log.decorate auto
+gedit ~/.bashrc
+Replace the content
 
+original content
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+Replace with the following content 
+
+# git branch info if present
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+ 
+if [ "$color_prompt" = yes ]; then
+   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\]\$ '
+else
+   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+fi
+
+open new terminal branch name.
 =================git lab command===========================
 
 New project setup
