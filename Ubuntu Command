@@ -50,7 +50,7 @@ Create new folder remain on main directory
 mkdir foldername/newfoldername
 mkdir Laravel/newali
 
-Delete Entire Folder
+Delete  Folder Entire:
 rm -rf foldername
 rm -rf info
 
@@ -187,6 +187,12 @@ php artisan db:seed --class=UserSeeder
 
 Laravel create seeder:
 php artisan make:seeder UserSeeder
+
+Laravel Error:
+composer not update 
+php dom extension ubuntu
+sudo apt install php-xml
+
 
 Composer Install:
 https://linuxize.com/post/how-to-install-and-use-composer-on-ubuntu-18-04/
@@ -479,13 +485,17 @@ sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql 
 
 sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service
 
+show ssh key:
+sudo nano ~/.ssh/known_hosts
+
 Snapd Install and uninstall:
 The follwing process also resolve Postman issues.
 unistall snap:
 sudo apt autoremove --purge snapd
 Install snap:
 sudo apt install snapd
-
+uninstall postman:
+sudo snap remove postman
 
 Github Desktop Download:
 sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb
@@ -516,6 +526,10 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 
 Ubuntu software download links:
+
+ubuntu show second:
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+
 https://linuxhint.com/installing_mysql_workbench_ubuntu/
 
 https://code.visualstudio.com/docs/setup/linux
