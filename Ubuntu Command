@@ -104,6 +104,18 @@ Remove/Delete all files and sub folder from folder:
 rm -r path/to/dir/*
 rm -r app/public/uploads/*
 
+dpkg was interrupted:
+node instalation error dbpkg
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
+Delete the updates with
+cd /var/lib/dpkg/updates
+sudo rm *
+Tried to update and upgrade:
+sudo apt update
+sudo apt upgrade
+https://askubuntu.com/questions/163200/e-dpkg-was-interrupted-run-sudo-dpkg-configure-a
+
+
 ======================Databse==============================
 My sql open 
 mysql -u root -p
@@ -459,7 +471,7 @@ git Error:
 No such remote origin
 git init
 git commit -m "first commit"
-git add README.md
+git add README.md       
 git commit -m "some descriptive message"
 
 gitignore file push :
@@ -467,6 +479,22 @@ to avoid git ignore file to push also env
 git rm -r --cached .
 git add .
 git commit -m ".gitignore is now working"
+
+git new project on live server:
+git init 
+git remote add bilal-kodextech https://gitlab.com/kodextech_1008/omia_web_new.git
+
+git push error:
+show following error
+git push --set-upstream origin master
+! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://gitlab.com/kodextech_1008/omia_web_new.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Run following command
+git push -f --set-upstream origin master
 
 
 ===================================== Git Issue/Error =================================
@@ -550,6 +578,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 Ubuntu software download links:
 
+node install/download:
+sudo apt install nodejs
+
 ubuntu show second:
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 
@@ -605,5 +636,14 @@ pm.environment.set("profile_uuid", jsonData.data.user.profile.uuid);
 31.484516537835773
 74.39748088995931
 
+======================SQL Queries ===================================
+select * from users where(id = (select  Round(count(id)/2) from users));
 
+select count(id) as num_of_users , userType
+from users
+where userType = 'owner'
+group by userType;
+
+
+======================SQL Queries ===================================
 
