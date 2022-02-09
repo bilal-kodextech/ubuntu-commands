@@ -309,9 +309,19 @@ sudo chmod -R 0755 /var/www/html
 
 Amazon Server Connect:
 first open the directory where pem file is placed then change permission of pem file by given follwing command 
+chmod 400 <pemFileName>
 chmod 400 Omiaapp.pem
 then add given url to open server like
 sudo ssh -i "Omiaapp.pem" mailto:ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com
+
+CORS Issue in Codigniter API hit from Ajax:
+header('Content-type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+ini_set('display_errors', 1);
+
 
 ================Laravel New project problem=================
 
