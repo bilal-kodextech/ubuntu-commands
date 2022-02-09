@@ -307,6 +307,12 @@ sudo chmod -R 0755 /var
 sudo chmod -R 0755 /var/www
 sudo chmod -R 0755 /var/www/html
 
+Amazon Server Connect:
+first open the directory where pem file is placed then change permission of pem file by given follwing command 
+chmod 400 Omiaapp.pem
+then add given url to open server like
+sudo ssh -i "Omiaapp.pem" mailto:ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com
+
 ================Laravel New project problem=================
 
 
@@ -421,6 +427,27 @@ git branch delete:
 git branch -d <branch name>
 git branch -d bilal-kodextech 
 
+git check remote URL:
+git config --get remote.origin.url
+git remote show origin
+
+git local branch to publish to remotely:
+git push -u origin <branch name which you make>
+git push -u origin testing
+
+git branch delete remotely 
+git push origin --delete <branch name>
+git push origin --delete remoteBranchName
+
+
+git branch create and switch with one command:
+git checkout -b <branch name>
+git checkout -b tests
+
+
+
+
+
 ===================================== Git Issue/Error =================================
 git error pathspec: 
 when create new project bydefault it was in master mode conver it to main by typing following command
@@ -507,7 +534,7 @@ npm run serve
 
 
 
-==================New ubunutu software downloads=====================
+==================ubunutu software downloads=====================
 
 sudo apt-get install preload
 
@@ -580,6 +607,13 @@ Ubuntu software download links:
 
 node install/download:
 sudo apt install nodejs
+
+Ubunutu install angular:
+sudo npm install -g @angular/cli
+then install npm 
+npm i
+To run Project:
+ng s
 
 ubuntu show second:
 gsettings set org.gnome.desktop.interface clock-show-seconds true
