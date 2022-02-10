@@ -424,6 +424,14 @@ Git create new branch
 git branch BranchName
 git branch dev-bilal
 
+git remote branch name show:
+git show all live/publish branch name.
+git branch -r
+
+git local branch name show:
+git show all local/nonPublish branch name.
+git branch
+
 
 
 Git show current branch Name:
@@ -453,6 +461,7 @@ git push origin --delete remoteBranchName
 git branch create and switch with one command:
 git checkout -b <branch name>
 git checkout -b tests
+
 
 
 
