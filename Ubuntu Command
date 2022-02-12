@@ -624,15 +624,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 Ubuntu software download links:
 
-node install/download:
-sudo apt install nodejs
 
-Ubunutu install angular:
-sudo npm install -g @angular/cli
-then install npm 
-npm i
-To run Project:
-ng s
+
+
 
 ubuntu show second:
 gsettings set org.gnome.desktop.interface clock-show-seconds true
@@ -665,6 +659,23 @@ Screnn rotaion right:
 xrandr - right
 
 =====================Ubuntu Screen Rotation==============================
+
+===================angular========================
+node install/download:
+sudo apt install nodejs
+
+Ubunutu install angular:
+sudo npm install -g @angular/cli
+then install npm 
+npm i
+To run Project:
+ng s
+
+angular cache clear:
+npm cache clean --force
+npm install -g @angular/cli
+===================angular========================
+
 
 ======================= Postman =============================
 postman bearer api token value retain:
