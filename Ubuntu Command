@@ -46,6 +46,10 @@ Move one specfic files and folder to another remain main directory
 mv folder/folder/folder/foldername ../../home/user/folder/folder/
 mv Laravel/project/zip/crud1 ../../home/user/Laravel/project/
 
+copy all files from one folder to another folder:
+cp -r  SourceFolderName/* DestinationFolderName/
+cp -r  html/* glitterups-backup-18-02-2022/
+
 Create new folder remain on main directory
 mkdir foldername/newfoldername
 mkdir Laravel/newali
@@ -115,6 +119,10 @@ sudo apt update
 sudo apt upgrade
 https://askubuntu.com/questions/163200/e-dpkg-was-interrupted-run-sudo-dpkg-configure-a
 
+===================ubuntu command======================
+right click with keyboard
+shft+f10
+===================ubuntu command======================
 
 ======================Databse==============================
 My sql open 
@@ -322,6 +330,8 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
 ini_set('display_errors', 1);
 
+close long list of history in terminal:
+simply press q
 
 ================Laravel New project problem=================
 
@@ -366,6 +376,52 @@ else
 fi
 
 open new terminal branch name.
+
+git check history:
+it show complete history of commit 
+git log
+
+git check history commit name only:
+git log --oneline
+
+Revert on specific commit:
+git checkout <name of commit>
+git checkout 0d1d7fc32
+
+
+git check all chnages/difference list
+git log -p
+
+git changes in file:
+git diff 
+
+git changes after commit:
+git show
+
+after add check diff:
+git diff --staged
+
+Reset last commit:
+the follwing error resolve also
+Your branch is ahead of 'origin/bilal' by 6 commits.
+after passing the command 
+git reset HEAD^ --hard
+Your branch is ahead of 'origin/bilal' by 5 commits.
+the following permanent delete changes
+git reset HEAD^ --hard
+the following changes are not permanent delete
+git reset HEAD^ --soft 
+
+git revert through head command:
+revert back to one commit
+git revert --no-commit HEAD~1..
+revert back to one commit
+git revert --no-commit HEAD~2..
+then type following commmand to continue revert
+git revert --continue 
+
+and if you want to skip the revert type following command
+git revert --skip
 =================git lab command===========================
 
 New project setup
@@ -426,7 +482,7 @@ git branch dev-bilal
 
 git remote branch name show:
 git show all live/publish branch name.
-git branch -r
+git branch -r 
 
 git local branch name show:
 git show all local/nonPublish branch name.
@@ -443,7 +499,10 @@ git remote set-url origin https://github.com/Career-Karma-Tutorials/git-submodul
 
 git branch delete:
 git branch -d <branch name>
-git branch -d bilal-kodextech 
+git branch -d bilal-kodextech
+if not work try below one
+git branch -D <branch name>
+git branch -D bilal-kodextech 
 
 git check remote URL:
 git config --get remote.origin.url
@@ -686,6 +745,19 @@ pm.environment.set("user_uuid", jsonData.data.user.uuid);
 pm.environment.set("profile_uuid", jsonData.data.user.profile.uuid);
 
 ======================= Postman =============================
+
+========================AWS===================
+copy file from local to live server in Amazon:
+first go to folder where file is placed but check the folder permission where you want to place the file give that folder a chmod 777 -R permission
+
+sudo scp -i "pem file" file/path/destination/filename  ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/destination/file
+sudo scp -i "Omiaapp.pem" apple-app-site-association  ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/var/www/html
+
+copy file from live server to local server Amazon:
+sudo scp -i "Omiaapp.pem"   ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/source/folder/filename /destination/folder.file
+sudo scp -i "Omiaapp.pem"   ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/var/www/omia/index.html /home/bilal/Downloads/
+
+========================AWS===================
 
 
 =================Latitude and Longitude ==========================
