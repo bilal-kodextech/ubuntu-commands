@@ -333,6 +333,9 @@ ini_set('display_errors', 1);
 close long list of history in terminal:
 simply press q
 
+php curl missing:
+sudo apt-get install php7.4-curl
+
 ================Laravel New project problem=================
 
 
@@ -412,6 +415,10 @@ git reset HEAD^ --hard
 the following changes are not permanent delete
 git reset HEAD^ --soft 
 
+
+git revert to specific commmit:
+git reset --hard <your commit hash key>
+
 git revert through head command:
 revert back to one commit
 git revert --no-commit HEAD~1..
@@ -422,6 +429,14 @@ git revert --continue
 
 and if you want to skip the revert type following command
 git revert --skip
+
+
+git add and commit in one line:
+git commit -am "commit changes"
+
+git add commit push in one step:
+git commit -am "commit all the things" && git push
+
 =================git lab command===========================
 
 New project setup
@@ -753,6 +768,10 @@ first go to folder where file is placed but check the folder permission where yo
 sudo scp -i "pem file" file/path/destination/filename  ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/destination/file
 sudo scp -i "Omiaapp.pem" apple-app-site-association  ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/var/www/html
 
+move to file from local server to live server
+sudo scp   Omiaapp.pem   root@45.56.122.34:/var/www/html/omia
+
+
 copy file from live server to local server Amazon:
 sudo scp -i "Omiaapp.pem"   ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/source/folder/filename /destination/folder.file
 sudo scp -i "Omiaapp.pem"   ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws.com:/var/www/omia/index.html /home/bilal/Downloads/
@@ -771,6 +790,28 @@ sudo scp -i "Omiaapp.pem"   ubuntu@ec2-18-119-85-250.us-east-2.compute.amazonaws
 74.3217460362148
 31.484516537835773
 74.39748088995931
+
+
+=============Workbench==========================
+Create table in specific database:
+CREATE TABLE `DatabseName`.`tableName` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `gift_amount` VARCHAR(45) NULL DEFAULT 'Null',
+  `sender_id` VARCHAR(45) NULL DEFAULT 'NUll',
+  `receiver_id` VARCHAR(45) NULL DEFAULT 'Null',
+  PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `omia`.`gift` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `gift_amount` VARCHAR(45) NULL DEFAULT 'Null',
+  `sender_id` VARCHAR(45) NULL DEFAULT 'NUll',
+  `receiver_id` VARCHAR(45) NULL DEFAULT 'Null',
+  PRIMARY KEY (`id`));
+
+=============Workbench==========================
+
 
 ======================SQL Queries ===================================
 select * from users where(id = (select  Round(count(id)/2) from users));
