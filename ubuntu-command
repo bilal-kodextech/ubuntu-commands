@@ -542,6 +542,9 @@ git checkout -b tests
 
 
 ===================================== Git Issue/Error =================================
+git install:
+sudo apt-get install git
+
 git error pathspec: 
 when create new project bydefault it was in master mode conver it to main by typing following command
 error: pathspec 'main' did not match any file(s) known to git
@@ -627,7 +630,7 @@ npm run serve
 
 
 
-==================ubunutu software downloads=====================
+==================ubuntu software downloads=====================
 
 sudo apt-get install preload
 
@@ -692,6 +695,56 @@ phpmyadmin install from this link:
 https://stackoverflow.com/questions/34060036/have-trouble-installing-phpmyadmin-on-php7-apache-2-4-7-ubuntu
 
 
+phpmyadmin not working after install:
+not found
+sudo nano  /etc/apache2/apache2.conf
+include one line in appache2.conf file 
+Include /etc/phpmyadmin/apache.conf
+then restarrt appache
+/etc/init.d/apache2 restart
+https://askubuntu.com/questions/55280/phpmyadmin-is-not-working-after-i-installed-it
+
+phpmyadmin download from ubuntu history:
+7  sudo apt update
+8  sudo apt-get install apache2
+9  cd /var/www/html/omia
+10  cd /var/www/html
+11  sudo nano info.php
+12  cd
+13  sudo apt update
+14  php -v
+15  sudo apache2 status
+16  service apache2 status
+17  sudo apt  install mysql-server
+18  mysql
+19  sudo mysql
+20  service  mysql  status
+21  sudo mysql -u  root -p
+22  sudo apt-get  install php libapache2-mod-php  php-mysql
+23  sudo apt-get  install phpmyadmin
+24  sudo service apache2 restart
+25  php -v
+26  sudo apache2 status
+27  service apache2 status
+28  service  mysql  status
+29  cd /etc/apache2/
+30  sudo nano apache2.conf 
+31  sudo service apache2 restart
+
+composer installed:
+press following command one by one.
+sudo apt update
+sudo apt install php-cli unzip
+cd ~
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+HASH=`curl -sS https://composer.github.io/installer.sig`
+echo $HASH
+php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04
+
+
 Root user check:
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
@@ -718,6 +771,21 @@ https://zoomadmin.com/HowToInstall/UbuntuPackage/libgconf-2-4
 ==============Check System Configuration =================
 sudo lshw:
 https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/
+
+
+Download MySQL 8.0 and phpMyAdmin with Apache2 server php version 7.4
+https://www.youtube.com/watch?v=GDZ5mQsopCo&ab_channel=OSTechHelp
+
+Similar links for phpmyadmin appache php mysql-server
+https://www.youtube.com/watch?v=kBkMxwZnruQ&ab_channel=TheTrainingHelp
+https://www.youtube.com/watch?v=HfvBXU4L20A&ab_channel=JosueAVRojas
+https://www.youtube.com/watch?v=GDZ5mQsopCo&ab_channel=OSTechHelp
+https://www.youtube.com/watch?v=kBkMxwZnruQ&ab_channel=TheTrainingHelp
+https://www.youtube.com/watch?v=PT0FFAj2TPA&ab_channel=ServerAdmin
+https://www.youtube.com/watch?v=NboJeJTRzic&t=2s&ab_channel=CodeWithHarry
+https://www.youtube.com/watch?v=VpygRfO8w9k&t=190s&ab_channel=Utshuk
+
+
 
 ======================Ubuntu Scree Rotation============================== randr -o normal
 Screen rotation lock:
