@@ -543,7 +543,7 @@ git checkout -b tests
 
 ===================================== Git Issue/Error =================================
 git install:
-sudo apt-get install git
+sudo apt-get install git 
 
 git error pathspec: 
 when create new project bydefault it was in master mode conver it to main by typing following command
