@@ -247,7 +247,7 @@ larvel project other route not open
 cd /etc/apache2
 sudo nano apache2.conf
 
-Rplace Or comment the code:
+Replace Or comment the code:
 Orignal exist:
 <Directory /var/www/>
        Options Indexes FollowSymLinks
@@ -305,6 +305,10 @@ appache old file:
 <IfModule mod_dir.c>
         DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
 </IfModule>
+
+larvel other route not found:
+https://www.codegrepper.com/code-examples/php/how+to+run+laravel+project+without+public+folder
+
 
 
 
@@ -475,6 +479,13 @@ sudo chown -R root:www-data bootstrap
 sudo chmod -R ug+w bootstrap
 
 root =username at your server
+
+Laravel new setup/clone from git old project:
+set env
+composer update
+composer dump-autoload
+server.php file name turn into index.php
+move .htacess from public folder to root directory
 
 
 Git Global configuration:
