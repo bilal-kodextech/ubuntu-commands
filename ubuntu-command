@@ -474,7 +474,7 @@ to limit storage folder access on linux server
 
 sudo chown -R root:www-data storage
 sudo chmod -R ug+w storage
-
+ 
 sudo chown -R root:www-data bootstrap
 sudo chmod -R ug+w bootstrap
 
