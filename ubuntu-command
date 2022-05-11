@@ -239,6 +239,17 @@ Add Following line:
 .env return null:
 php artisan config:clear
 
+Laravel Default Authentication:
+composer require laravel/ui
+php artisan ui vue --auth
+npm install
+sudo npm run dev 
+
+node version update from 10 to 12:
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+https://www.codegrepper.com/code-examples/shell/update+node+10+to+12+ubuntu
+
 =================Laravel New Project==============
 
 ================Laravel New project problem=================
@@ -492,6 +503,10 @@ Git Global configuration:
 git config --global user.name "your_username"
 git config --global user.email "your_email_address@example.com"
 git config --global --list
+
+Permanantly save git password(Not Sure)
+git config --global credential.helper store
+
 
 git push:
 git add.
