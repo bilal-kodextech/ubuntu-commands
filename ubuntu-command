@@ -853,6 +853,9 @@ pm.environment.set("bearer", jsonData.data.access_token);
 pm.environment.set("user_uuid", jsonData.data.user.uuid);
 pm.environment.set("profile_uuid", jsonData.data.user.profile.uuid);
 
+Postman bearer token remove from envirement:
+pm.environment.set("bearer", null);
+
 ======================= Postman =============================
 
 ========================AWS===================
