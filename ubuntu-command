@@ -108,6 +108,15 @@ Remove/Delete all files and sub folder from folder:
 rm -r path/to/dir/*
 rm -r app/public/uploads/*
 
+ubuntu comment in terminal:
+# hash is used for comment for example
+you want to run a command in terminal 
+mkdir test
+it make a folder in the directory but when you run command like this
+#mkdir test   OR   # mkdir test
+no file is created
+
+
 dpkg was interrupted:
 node instalation error dbpkg
 E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
@@ -350,6 +359,9 @@ simply press q
 
 php curl missing:
 sudo apt-get install php7.4-curl
+
+short key for line number in vscode:
+ctrl+g
 
 ================Laravel New project problem=================
 
@@ -657,6 +669,19 @@ npm run serve
 
 
 ==================ubuntu software downloads=====================
+google chrom install/download:
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
+https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
+
+
+vscode/visual studio install:
+sudo snap install --classic code
+
+snap install:
+sudo apt install snapd
 
 sudo apt-get install preload
 
@@ -726,41 +751,61 @@ not found
 sudo nano  /etc/apache2/apache2.conf
 include one line in appache2.conf file 
 Include /etc/phpmyadmin/apache.conf
-then restarrt appache
+then restart appache
 /etc/init.d/apache2 restart
 https://askubuntu.com/questions/55280/phpmyadmin-is-not-working-after-i-installed-it
 
-phpmyadmin download from ubuntu history:
-7  sudo apt update
-8  sudo apt-get install apache2
-9  cd /var/www/html/omia
-10  cd /var/www/html
-11  sudo nano info.php
-12  cd
-13  sudo apt update
-14  php -v
-15  sudo apache2 status
-16  service apache2 status
-17  sudo apt  install mysql-server
-18  mysql
-19  sudo mysql
-20  service  mysql  status
-21  sudo mysql -u  root -p
-22  sudo apt-get  install php libapache2-mod-php  php-mysql
-23  sudo apt-get  install phpmyadmin
-24  sudo service apache2 restart
-25  php -v
-26  sudo apache2 status
-27  service apache2 status
-28  service  mysql  status
-29  cd /etc/apache2/
-30  sudo nano apache2.conf 
-31  sudo service apache2 restart
+sudo apt update
+sudo apt-get install apache2
+cd /var/www/html/omia
+cd /var/www/html
+sudo nano info.php
+cd
+sudo apt update
+php -v
+sudo apache2 status
+service apache2 status
+sudo apt  install mysql-server
+mysql
+sudo mysql
+service  mysql  status
+sudo mysql -u  root -p
+sudo apt-get  install php libapache2-mod-php  php-mysql
+sudo apt-get  install phpmyadmin
+sudo service apache2 restart
+php -v
+sudo apache2 status
+service apache2 status
+service  mysql  status
+cd /etc/apache2/
+sudo nano apache2.conf 
+#include below line
+Include /etc/phpmyadmin/apache.conf
+sudo service apache2 restart
 
+phpmyadmin Access Denied for User 'root'@'localhost' (using password: YES) - No Privileges:
+run this command
+sudo mysql
+
+thien run this command
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+a table is open in which all user are appear. root user appear and might be there is not password in front of root user
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Current-Root-Password';
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+and last run this command:
+FLUSH PRIVILEGES;
+
+
+
+https://stackoverflow.com/questions/17975120/access-denied-for-user-rootlocalhost-using-password-yes-no-privileges
 composer installed:
 press following command one by one.
 sudo apt update
 sudo apt install php-cli unzip
+sudo apt install curl
 cd ~
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 HASH=`curl -sS https://composer.github.io/installer.sig`
@@ -773,6 +818,32 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer
 
 Root user check:
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+
+laravel project other route expect / not found :
+cd /etc/apache2
+sudo nano apache2.conf
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        DirectoryIndex index.php
+        Require all granted
+</Directory>
+
+then you need to modify /etc/apache2/mods-available/dir.conf and move index.php first 
+<IfModule mod_dir.c>
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+AND DO NOT FORGET: Run a2enmode
+sudo a2enmod rewrite
+sudo service apache2 restart
+/etc/apache2/mods-available/dir.conf
+     
+Laravel default UI set:
+sudo apt install npm
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm run dev
 
 
 Ubuntu software download links:
@@ -921,3 +992,89 @@ group by userType;
 
 ======================SQL Queries ===================================
 
+Ubuntu software installation all include laravel projet run Default ui Node npm al:
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install snapd
+sudo snap install --classic code
+git init
+git install
+sudo apt install git
+sudo snap install slack
+7  sudo apt update
+sudo apt update
+sudo apt-get install apache2
+php -v
+sudo nano apache2.conf 
+/etc/init.d/apache2 restart
+cd
+sudo mysql
+mysql -u  root -p
+udo mysql -u root 
+sudo mysql -u root 
+sudo service mysql restart
+sudo chmod 777 -R /var/www/
+sudo chmod 777 -R /var/www/html/
+sudo mysql
+cd /var/www/html
+git clone --branch master  https://gitlab.com/bilal-kodextech/ubuntu-commands.git
+cd ubuntu-commands/
+code .
+sudo apt update
+cd 
+sudo apt install php-cli unzip
+cd ~
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+sudo apt install curl
+cd ~
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+HASH=`curl -sS https://composer.github.io/installer.sig`
+echo $HASH
+php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer
+history
+cd /var/www/html
+composer create-project laravel/laravel example-app
+cd example-app/
+code .
+sudo chmod 777 -R storage/
+sudo chmod 777 -R bootstrap/
+cd ../
+cd
+cd /var/www/html
+git clone https://bilal_novatore@bitbucket.org/novatore-sols/tmc-webapp.git
+cd tmc-webapp/
+code .
+composer update
+composer dump-autoload
+sudo chmod 777 -R storage/
+sudo chmod 777 -R bootstrap/
+cd ../project/
+code .
+cd
+cd /etc/apache2
+sudo nano apache2.conf
+sudo service mysql restart
+sudo service apache2 restart
+sudo mods-available/
+cd mods-available/
+sudo nano dir.conf 
+sudo a2enmod rewrite
+sudo service apache2 restart
+cd
+cd /var/www/html/
+composer create-project laravel/laravel test
+cd test/
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install && npm run dev
+sudo apt install npm
+npm install && npm run dev
+node --version
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo  npm run dev
+sudo chmod 777 -R storage/
+sudo chmod 777 -R bootstrap/
+sudo chmod 777 -R public/
