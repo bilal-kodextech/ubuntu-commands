@@ -927,6 +927,9 @@ pm.environment.set("profile_uuid", jsonData.data.user.profile.uuid);
 Postman bearer token remove from envirement:
 pm.environment.set("bearer", null);
 
+if you do not set envirment then you send bearer token through header for protected route:
+Authorization Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODAwNTkxM2E1ZmU3MzBhMWM5N2NlMzZhYjgwNTA2OWRiZDRlNDdiNTcxZGMyZjE0MzEwYjc5ZjNhOGVhMjIwNmJhMmM4ZDdmY2M5MWUzNjkiLCJpYXQiOjE2NTIzMzQ1NTcuNTk1MDQxLCJuYmYiOjE2NTIzMzQ1NTcuNTk1MDQ0LCJleHAiOjE2ODM4NzA1NTcuNTg3NzgxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Lu5RUDpwaYPhHfAPHnRwwe3fWMnbInQZXpv32AJsVxsLYr1R4UZNYdKQ8EKy3TIyes3GeK6-ccLF31Y-GinSI9hq3HGcb4sfsfMqjBO5b_xHarupebppXG2-4Mzx2iOgGYNiznIOoxwb8OW0S0T7gf_7uEcIdhwfA34wFP-3tYzyx8omVGQYVN6xSsZ1EBCCHcTT5-n0sp5uNEmO9kKJkcjh72BkazB6qQFLS03Q1DlBmO0agxX4DDK5nbK6_3ZFy9ln53snFnOYaDYqtD0zUNBnqMFyNNkpMmgm2Rf7UVFpe2_QOVmruqdqgXVrukYiBb3zfnSy5G65oFFQNq0ugTBAdHG0R0e5sOsXK8dxu4aosw5Gibk_Bmg1M30_AEe2BRpG9R43FqPbH39QwwCwe8RRqkhZX-i2Y1KzwqqrCjdmmVhJzXANIVZg7reaTnItVHcFGqHWwQx2s_Sp9JGphwf32erSPOWLQxPk9XXTx465LMPQVRNovvTN0hCTepIHUWaoL8RAzeaT9cAA2lqOsULs5kQTDXAumxsliw7jQPs6qpkpCPRgrTi9AGMccVUgXa10h5isUKcr5IYsjA6DjrwL-6-9MqO6X7DGcXEBgCbNgqI-tQ7Ckc1rzusIDN3PcEn-dfXMJCvVV73weXo3liUOD7134p-iItU7bxsYBuQ
+
 ======================= Postman =============================
 
 ========================AWS===================
