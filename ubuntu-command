@@ -995,6 +995,7 @@ group by userType;
 
 ======================SQL Queries ===================================
 
+========================ubuntu new setup=======================
 Ubuntu software installation all include laravel projet run Default ui Node npm al:
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
@@ -1081,3 +1082,34 @@ sudo  npm run dev
 sudo chmod 777 -R storage/
 sudo chmod 777 -R bootstrap/
 sudo chmod 777 -R public/
+========================ubuntu new setup=======================
+
+========================gitlab setup in windoe===================
+C:\xampp\htdocs\technology-wisdom>doskey  /history
+git config --global user.name
+git config --global user.name "maryum3"
+git config --global user.name
+git config --global user.email"maryumiqbal3@gmail.com"
+git config --global user.email
+git config --global --list
+cd ..\..\xampp\htdocs\technology-wisdom
+git status
+git init
+git status
+git add .
+git commit -m 'changes'
+git push -u https://gitlab.com/maryum3/technology-wisdom.git master
+
+#git pull
+git pull https://gitlab.com/maryum3/technology-wisdom.git master
+
+git status
+git add .
+git commit -m 'dsash'
+git push 
+doskey  /history
+git remote add origin https://gitlab.com/maryum3/technology-wisdom.git
+
+
+========================gitlab setup in windoe===================
+
