@@ -468,6 +468,12 @@ git commit -am "commit changes"
 git add commit push in one step:
 git commit -am "commit all the things" && git push
 
+git remove remote origin:
+git remote remove origin
+
+git check ignore file in gitignore:
+git status --ignored
+
 =================git lab command===========================
 
 New project setup
@@ -641,6 +647,8 @@ git commit -m "some descriptive message"
 
 gitignore file push :
 to avoid git ignore file to push also env
+
+git cache clear:
 git rm -r --cached .
 git add .
 git commit -m ".gitignore is now working"
@@ -887,6 +895,8 @@ https://www.youtube.com/watch?v=NboJeJTRzic&t=2s&ab_channel=CodeWithHarry
 https://www.youtube.com/watch?v=VpygRfO8w9k&t=190s&ab_channel=Utshuk
 
 
+heroku install in ubuntu:
+sudo snap install --classic heroku
 
 ======================Ubuntu Scree Rotation============================== randr -o normal
 Screen rotation lock:
@@ -1089,6 +1099,10 @@ sudo chmod 777 -R public/
 ========================ubuntu new setup=======================
 
 ========================gitlab setup in windoe===================
+gitlab Permanantly save username and password:
+git config --global credential.helper store
+
+
 C:\xampp\htdocs\technology-wisdom>doskey  /history
 git config --global user.name
 git config --global user.name "maryum3"
@@ -1116,4 +1130,23 @@ git remote add origin https://gitlab.com/maryum3/technology-wisdom.git
 
 
 ========================gitlab setup in windoe===================
+
+==========================heroku command==========================
+sudo snap install --classic heroku
+git remote add origin https://bilal_novatore@bitbucket.org/novatore-sols/tootaa-backend-laravel.git
+heroku git:clone -a tootaa-app
+git status
+git status
+git add .
+git commit -m 'herku seetings'
+clear
+git remote 
+git remote add origin https://bilal_novatore@bitbucket.org/novatore-sols/tootaa-backend-laravel.git
+git remote 
+git pull origin backend-dev
+git status
+git push heroku master
+
+==========================heroku command==========================
+
 
