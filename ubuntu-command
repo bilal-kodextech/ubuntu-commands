@@ -898,6 +898,9 @@ https://www.youtube.com/watch?v=VpygRfO8w9k&t=190s&ab_channel=Utshuk
 heroku install in ubuntu:
 sudo snap install --classic heroku
 
+ubuntu screenshot install:
+sudo apt install deepin-screenshot
+
 ======================Ubuntu Scree Rotation============================== randr -o normal
 Screen rotation lock:
 window + o 
