@@ -168,6 +168,10 @@ Then use raw query to to manipulate data;
 
 close database;
 exit;
+=======php install in ubuntu=======
+uninstall/remove all php version from ubunut 
+sudo apt-get purge 'php*'
+=======php install in ubuntu=======
 
 ======================Laravel===========================
 Install laravel:
@@ -1013,6 +1017,9 @@ group by userType;
 ======================SQL Queries ===================================
 
 ========================ubuntu new setup=======================
+ubuntu new setup on live server:
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
+
 Ubuntu software installation all include laravel projet run Default ui Node npm al:
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
@@ -1022,7 +1029,7 @@ git init
 git install
 sudo apt install git
 sudo snap install slack
-7  sudo apt update
+sudo apt update
 sudo apt update
 sudo apt-get install apache2
 php -v
