@@ -676,6 +676,45 @@ git push -f --set-upstream origin master
 
 ===================================== Git Issue/Error =================================
 
+========================live server setup===================
+apt-get update -y
+
+apt upgrade -y 3 . apt install apache2 -y
+
+apt install php7.4 libapache2-mod-php7.4 php7.4-curl php-pear php7.4-gd php7.4-dev php7.4-zip php7.4-mbstring php7.4-mysql php7.4-xml curl -y
+
+vi /etc/php/7.4/apache2/php.ini
+
+systemctl start apache2
+
+systemctl enable apache2
+
+curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer chmod +x /usr/local/bin/composer
+
+composer --version
+
+cd /var/www/html
+
+composer create-project laravel/laravel projectname --prefer-dist
+
+cd projectname
+
+php artisan -----> we will see the laravel version
+
+chown -R www-data:www-data /var/www/html/projectname
+
+chmod -R 775 /var/www/html/projectname/storage
+
+nano /etc/apache2/sites-available/laravel.conf
+
+<VirtualHost *:80> ServerName ip address of the server ServerAdmin admin@example.com DocumentRoot /var/www/html/projectname/public <Directory /var/www/html/projectname> AllowOverride All ErrorLog ${APACHE_LOG_DIR}/error.log CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+a2ensite laravel.conf
+a2enmod rewrite
+systemctl restart apache2
+
+========================live server setup===================
+
 ===============Node Command =================
 ubuntu node command
 npm rebuild node-scss
@@ -814,6 +853,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 and last run this command:
 FLUSH PRIVILEGES;
 
+mysql root user password change:
+https://www.youtube.com/watch?v=6d5RREqxN44&ab_channel=BrainI%2FO
 
 
 https://stackoverflow.com/questions/17975120/access-denied-for-user-rootlocalhost-using-password-yes-no-privileges
@@ -897,6 +938,47 @@ https://www.youtube.com/watch?v=kBkMxwZnruQ&ab_channel=TheTrainingHelp
 https://www.youtube.com/watch?v=PT0FFAj2TPA&ab_channel=ServerAdmin
 https://www.youtube.com/watch?v=NboJeJTRzic&t=2s&ab_channel=CodeWithHarry
 https://www.youtube.com/watch?v=VpygRfO8w9k&t=190s&ab_channel=Utshuk
+
+
+virtual host server error after project deploy:
+
+<VirtualHost *:80>
+   ServerName 209.250.245.218
+   ServerAlias 209.250.245.218
+   DocumentRoot /var/www/html/tootaa/public
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =209.250.245.218 [OR]
+RewriteCond %{SERVER_NAME} =209.250.245.218
+# RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerAdmin 209.250.245.218
+    ServerName 209.250.245.218
+    ServerAlias 209.250.245.218
+    DocumentRoot /var/www/209.250.245.218
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo a2ensite tootaa.conf
+
+sudo ln -s /etc/apache2/sites-available/tootaa.conf /etc/apache2/sites-enabled/
+
+<VirtualHost *:80>
+    ServerName 209.250.245.218
+    ServerAlias 209.250.245.218
+    ServerAdmin localhost
+    DocumentRoot /var/www/html/tootaa/public
+
+    <Directory /var/www/html/tootaa/public>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/example.com-error.log
+    CustomLog ${APACHE_LOG_DIR}/example.com-access.log combined
+</VirtualHost>
 
 
 heroku install in ubuntu:
@@ -1017,8 +1099,40 @@ group by userType;
 ======================SQL Queries ===================================
 
 ========================ubuntu new setup=======================
+php install:
+sudo apt install php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-laravel-with-lemp-on-ubuntu-18-04
+https://tecadmin.net/install-php-ubuntu-20-04/
+https://linuxhint.com/install-php-7-linux/#:~:text=You%20can%20now%20see%20that,installed%20on%20Ubuntu%2020.04%20LTS.
+https://phoenixnap.com/kb/install-php-7-on-ubuntu
+https://www.geeksforgeeks.org/how-to-install-php-on-linux/
+https://www.digitalocean.com/community/tutorials/how-to-install-php-7-4-and-set-up-a-local-development-environment-on-ubuntu-20-04
+https://computingforgeeks.com/how-to-install-php-on-ubuntu/
+https://www.codegrepper.com/code-examples/php/install+php+7.4.3+ubuntu
+https://www.codegrepper.com/code-examples/php/how+to+install+php+7.4.3+in+ubuntu
+https://linuxize.com/post/how-to-install-php-on-ubuntu-18-04/
+https://linuxconfig.org/how-to-install-php-on-ubuntu-linux
+
+mysql password for root user change or update:
+https://www.youtube.com/watch?v=6d5RREqxN44&ab_channel=BrainI%2FO
+
+laravel fresh deploy on ubuntu server:
+https://www.youtube.com/watch?v=N3Suj3ov90o&ab_channel=3minstitute
+
 ubuntu new setup on live server:
+https://github.com/raushan9038/Laravel_env_setup
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-laravel-with-lemp-on-ubuntu-18-04
+
+issues when deploy on live server:
+https://www.digitalocean.com/community/tutorials/apache-configuration-error-ah00558-could-not-reliably-determine-the-server-s-fully-qualified-domain-name
+
+virtual host create:
+https://linuxhint.com/setup-apache-virtual-hosts-on-ubuntu-22-04/
+
+Please provide a valid cache path:
+make folder inside storage folder inside framework like (session,testing view)
+https://stackoverflow.com/questions/38483837/please-provide-a-valid-cache-path-error-in-laravel
 
 Ubuntu software installation all include laravel projet run Default ui Node npm al:
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
