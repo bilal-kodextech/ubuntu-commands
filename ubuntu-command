@@ -677,6 +677,9 @@ git push -f --set-upstream origin master
 ===================================== Git Issue/Error =================================
 
 ========================live server setup===================
+
+tutorials command 
+
 apt-get update -y
 
 apt upgrade -y 3 . apt install apache2 -y
@@ -713,6 +716,71 @@ a2ensite laravel.conf
 a2enmod rewrite
 systemctl restart apache2
 
+
+
+server setup command by seting virtual host:
+
+ssh root@209.250.245.218
+d#L8{L*@RB4RqGtq
+
+sudo nano /etc/apache2/sites-available/tootaa.conf
+
+<VirtualHost *:80>
+ServerAdmin 209.250.245.218
+ServerName 209.250.245.218
+ServerAlias http://209.250.245.218/tootaa
+DocumentRoot /var/www/html/tootaa/public
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+ sudo a2ensite tootaa.conf
+ <Directory /var/www/html/tootaa>
+       AllowOverride All
+</Directory>
+
+chown -R www-data:www-data /var/www/html/tootaa
+chmod -R 775 /var/www/html/tootaa/storage
+
+<VirtualHost *:80> 
+ServerName 209.250.245.218
+ServerAdmin admin@tootaa.com
+DocumentRoot /var/www/html/tootaa/public 
+<Directory /var/www/html/tootaa>
+       AllowOverride All
+</Directory>
+ ErrorLog ${APACHE_LOG_DIR}/error.log 
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+server {
+    server_name 209.250.245.218;
+    root /var/www/html/tootaa/public;
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+    index index.html index.htm index.php;
+    charset utf-8;
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+    error_page 404 /index.php;
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+  <Directory /var/www/html/tootaa>
+        DirectoryIndex index.php
+        Require all granted
+  </Directory>
+  
 ========================live server setup===================
 
 ===============Node Command =================
@@ -1101,10 +1169,15 @@ group by userType;
 ========================ubuntu new setup=======================
 php install:
 sudo apt install php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
+
+apt-get install libapache2-mod-php8.1 php8.1-fpm libapache2-mod-fcgid php8.1-curl php8.1-dev php8.1-gd php8.1-mbstring php8.1-zip php8.1-mysql php8.1-xml
+
+
+https://thishosting.rocks/install-php-on-ubuntu/
+https://phoenixnap.com/kb/install-php-7-on-ubuntu
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-laravel-with-lemp-on-ubuntu-18-04
 https://tecadmin.net/install-php-ubuntu-20-04/
 https://linuxhint.com/install-php-7-linux/#:~:text=You%20can%20now%20see%20that,installed%20on%20Ubuntu%2020.04%20LTS.
-https://phoenixnap.com/kb/install-php-7-on-ubuntu
 https://www.geeksforgeeks.org/how-to-install-php-on-linux/
 https://www.digitalocean.com/community/tutorials/how-to-install-php-7-4-and-set-up-a-local-development-environment-on-ubuntu-20-04
 https://computingforgeeks.com/how-to-install-php-on-ubuntu/
