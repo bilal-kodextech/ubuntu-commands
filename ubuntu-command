@@ -797,6 +797,9 @@ google chrom install/download:
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
+google chrom uninstall:
+sudo apt --purge remove google-chrome-stable
+
 https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
 
 
