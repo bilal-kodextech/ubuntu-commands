@@ -169,6 +169,26 @@ Then use raw query to to manipulate data;
 close database;
 exit;
 =======php install in ubuntu=======
+php 8.1.7 install with all extention:
+you install php 8.1.7 by entering followin command one by one and linke is givem at END
+
+sudo apt update && sudo apt -y upgrade
+sudo systemctl reboot
+sudo apt update
+sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install php8.1
+php --version
+sudo apt install php8.1-<TAB>
+sudo apt install php8.1-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
+systemctl status php*-fpm.service
+systemctl status php*-fpm.service
+
+https://computingforgeeks.com/how-to-install-php-on-ubuntu-linux-system/
+
+apt-get install php8.0 libapache2-mod-php8.0 php8.0-common php8.0-gd php8.0-mysql php8.0-curl php8.0-intl php8.0-xsl php8.0-mbstring php8.0-zip php8.0-bcmath php8.0-soap php-xdebug php-imagick
+
 uninstall/remove all php version from ubunut 
 sudo apt-get purge 'php*'
 =======php install in ubuntu=======
@@ -234,6 +254,25 @@ sudo apt install php-xml
 Composer Install:
 https://linuxize.com/post/how-to-install-and-use-composer-on-ubuntu-18-04/
 
+
+Laravel base 64 image upload:
+    // Base 64 Image Upload 
+        // $base64File = $request->input('image');
+        // // decode the base64 file
+        // $fileData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $base64File));
+        // // save it to temporary dir first.
+        // $tmpFilePath = sys_get_temp_dir() . '/' . Str::uuid()->toString();
+        // file_put_contents($tmpFilePath, $fileData);
+        // // this just to help us get file info.
+        // $tmpFile = new File($tmpFilePath);
+        // $file = new UploadedFile(
+        //     $tmpFile->getPathname(),
+        //     $tmpFile->getFilename(),
+        //     $tmpFile->getMimeType(),
+        //     0,
+        //     true // Mark it as test, since the file isn't from real HTTP POST.
+        // );        
+        
 =================Laravel New Project==============
 install project:
 composer create-project laravel/laravel example-app
@@ -268,6 +307,21 @@ sudo apt-get install -y nodejs
 https://www.codegrepper.com/code-examples/shell/update+node+10+to+12+ubuntu
 
 =================Laravel New Project==============
+=================Laravel Links====================
+Sweat Alert in laravel:
+https://www.itsolutionstuff.com/post/how-to-use-sweetalert-message-box-in-laravel-5example.html
+
+Laravel Pdf Generator:
+https://www.itsolutionstuff.com/post/laravel-8-pdf-laravel-8-generate-pdf-file-using-dompdfexample.html
+
+Email Verified at:
+https://stackoverflow.com/questions/63570109/laravel-check-if-user-email-verified
+
+base64 image upload convert string into image object:
+https://stackoverflow.com/questions/58509456/how-to-convert-base64-image-to-uploadedfile-laravel
+=================Laravel Links====================
+
+
 
 ================Laravel New project problem=================
 change in appache file: 
@@ -947,6 +1001,8 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 composer
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04
 
+composer install with out conflict:
+composer install --ignore-platform-reqs
 
 Root user check:
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
@@ -1204,9 +1260,13 @@ php 8.0 install in ubuntu:
  sudo apt install php8.0 libapache2-mod-php8.0 
  
 php install through fpm:
+
  sudo apt-get install php8.0 php8.0-fpm php8.0-mysql libapache2-mod-php8.0 -y
 
 https://www.tecmint.com/install-php-8-on-ubuntu/
+https://computingforgeeks.com/how-to-install-php-on-ubuntu-2/
+https://linuxhint.com/install-php-8-ubuntu-22-04/
+https://linuxize.com/post/how-to-install-php-8-on-ubuntu-20-04/
 
 mysql password for root user change or update:
 https://www.youtube.com/watch?v=6d5RREqxN44&ab_channel=BrainI%2FO
